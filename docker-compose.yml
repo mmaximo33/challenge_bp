@@ -1,0 +1,55 @@
+version: '3'
+
+# Reutilizado de https://github.com/mmaximo33/EFDE/tree/main/environments/symfony
+#restart: unless-stopped
+
+services:
+  nginx:
+    build:
+      context: ./.docker/nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./app/:/app
+    depends_on:
+      - app_fpm
+
+  app_fpm:
+    build:
+      context: ./.docker/php/7.4/fpm
+    expose:
+      - 9000
+    volumes:
+      - ./app/:/app
+    depends_on:
+      - db
+
+  app_cli:
+    build:
+      context: ./.docker/php/7.4/cli
+    ports:
+      - 35729:35729
+    volumes:
+      - ./app/:/app
+    depends_on:
+      - db
+
+  db:
+    image: 'mariadb:10.4'
+    command: --default-authentication-plugin=mysql_native_password
+    env_file: .docker/.env
+    ports:
+      - 3306:3306
+    volumes:
+      - .docker/database/data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    env_file: .docker/.env
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+
+networks:
+  challenge_bp:
