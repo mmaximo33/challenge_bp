@@ -11,7 +11,7 @@ fi
 case "$1" in
   "up")
     ${DOCKER_COMPOSE_COMMAND} up -d --build
-    #sudo chown -R www-data:www-data app/*
+    #sudo chown -R $USER:www-data app/*
     #sudo chmod -R -x bin/*
     ;;
   "start")
