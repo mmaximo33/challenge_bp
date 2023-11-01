@@ -12,9 +12,9 @@ services:
     volumes:
       - ./app/:/app
     depends_on:
-      - app_fpm
+      - app
 
-  app_fpm:
+  app:
     build:
       context: ./.docker/php/7.4/fpm
     expose:

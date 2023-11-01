@@ -40,6 +40,9 @@ RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} >
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=${COMPOSER_VERSION} \
     && composer --version
 
+RUN composer global require laravel/installer && ln -sfT ~/.composer/vendor/bin/laravel /usr/local/bin/laravel
+
+
 # APP path container project
 RUN mkdir -p ${APP_PATH}
 RUN groupadd -g 1000 www && useradd -g 1000 -u 1000 -d ${APP_PATH} -s /bin/bash www

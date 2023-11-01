@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Reutilizado de https://github.com/mmaximo33/EFDE/
+
+if docker compose version > /dev/null 2>&1; then
+  DOCKER_COMPOSE_COMMAND="docker compose"
+else
+  DOCKER_COMPOSE_COMMAND="docker-compose"
+fi
+
+case "$1" in
+  "up")
+    ${DOCKER_COMPOSE_COMMAND} up -d --build
+    #sudo chown -R www-data:www-data app/*
+    #sudo chmod -R -x bin/*
+    ;;
+  "start")
+    ${DOCKER_COMPOSE_COMMAND} start
+    ;;
+  "stop")
+    echo "Deteniendo el contenedor Docker..."
+    # Comandos para detener el contenedor
+    ;;
+  "allstop")
+    echo "Stop apache"
+    sudo service apache2 stop
+    echo "Stop all containers"
+    docker stop $(docker ps -aq)
+    ;;
+  "restart")
+    ${DOCKER_COMPOSE_COMMAND} restart
+    ;;
+  "logs")
+    ${DOCKER_COMPOSE_COMMAND} logs -f
+    ;;
+  *)
+    echo "Uso: $0 {up|start|allstop|stop|restart|logs}"
+    exit 1
+    ;;
+esac
