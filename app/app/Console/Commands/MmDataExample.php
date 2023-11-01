@@ -80,9 +80,9 @@ class MmDataExample extends Command
         $qtyProducts = $qtyOrders = $qtyOrdersLines = 0;
 
         $questions = [
-            'How many products do you want to create?'      => &$qtyProducts,
-            'How many orders do you want to create?'        => &$qtyOrders,
-            'How many order lines do you want to create?'   => &$qtyOrdersLines,
+            'How many PRODUCTS do you want to create?'      => &$qtyProducts,
+            'How many ORDERS do you want to create?'        => &$qtyOrders,
+            'How many ORDERS_LINES do you want to create?'   => &$qtyOrdersLines,
         ];
 
         foreach ($questions as $question => &$quantity) {
