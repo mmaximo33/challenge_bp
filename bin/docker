@@ -19,7 +19,7 @@ case "$1" in
     ;;
   "stop")
     echo "Deteniendo el contenedor Docker..."
-    # Comandos para detener el contenedor
+    ${DOCKER_COMPOSE_COMMAND} stop
     ;;
   "allstop")
     echo "Stop apache"
