@@ -66,7 +66,7 @@ The objective of this project is **Create a project with Laravel 8 and Livewire*
 
 ## Setup environment 
 ### requirements
-- Curl or Wget
+- GIT
 - Docker 
 - Docker-compose or docker compose 
 
@@ -74,12 +74,17 @@ The objective of this project is **Create a project with Laravel 8 and Livewire*
 
 ### Commands
 
-- `bin/docker` {up | start | stop | allstop | restart | logs }
+- `bin/docker` {up | start | stop | allstop | restart | logs | removeproject}
 - `bin/composer` 
 - `bin/artisan`
 
-
 ### Install
+
+**[See full video](docs/img/setup_and_remove_environment.gif)**
+
+
+<img src="docs/img/setup_and_remove_environment.gif">
+
 #### Clone repository
 ```sh
 mkdir -p ~/domains/challenger_bp
@@ -93,8 +98,6 @@ git clone https://github.com/mmaximo33/challenge_bp ./
 chmod +x bin/*
 
 bin/docker up
-
-bin/composer install
 ```
 
 #### Check status
@@ -178,6 +181,8 @@ bin/artisan mm:salesorders:total
 ### 4 Show the data of the generated orders in the FE
 
 The data generated in the previous tasks is displayed in the **root url** of the project
+
+The implicit requirements of this task are in preparation, see issue #4
 
 <img src="docs/img/show_data_fe.png" height="400" >
 
