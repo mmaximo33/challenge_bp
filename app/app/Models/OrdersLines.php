@@ -24,7 +24,7 @@ class OrdersLines extends Model
      */
     public function product()
     {
-        return $this->belongsTo(Products::class);
+        return $this->belongsTo(Products::class, 'product_id');
     }
 
     /**
@@ -34,6 +34,6 @@ class OrdersLines extends Model
      */
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class,'order_id');
     }
 }

@@ -18,7 +18,7 @@ class OrdersFactory extends Factory
     public function definition()
     {
         return [
-            'order_ref'     => $this->faker->word,
+            'order_ref'     => 'o' . $this->faker->numberBetween(2000,3000),
             'customer_name' => $this->faker->name,
         ];
     }

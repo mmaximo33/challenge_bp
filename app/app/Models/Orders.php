@@ -21,9 +21,9 @@ class Orders extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function orderLines()
+    public function ordersLines()
     {
-        return $this->hasMany(OrderLines::class);
+        return $this->hasMany(OrdersLines::class,'order_id');
     }
 
     /**
