@@ -8,4 +8,3 @@ fi
 
 SERVICE=$(${DOCKER_COMPOSE_COMMAND} ps -a --services | grep "$(${DOCKER_COMPOSE_COMMAND} ps -q | grep "cli")" | awk '$0 == "app_cli"')
 ${DOCKER_COMPOSE_COMMAND} run $SERVICE php artisan $@
-sudo chown -R $USER:www-data app/*

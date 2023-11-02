@@ -10,7 +10,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./app/:/app
+      - ./app/:/app:delegated
     depends_on:
       - app
 
@@ -20,7 +20,7 @@ services:
     expose:
       - 9000
     volumes:
-      - ./app/:/app
+      - ./app/:/app:deleated
     depends_on:
       - db
 
@@ -30,7 +30,7 @@ services:
     ports:
       - 35729:35729
     volumes:
-      - ./app/:/app
+      - ./app/:/app:delegated
     depends_on:
       - db
     restart: unless-stopped

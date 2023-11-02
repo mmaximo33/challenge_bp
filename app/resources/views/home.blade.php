@@ -14,7 +14,7 @@
             <div
                 class="inline-block min-w-full shadow-md rounded-lg overflow-hidden"
             >
-                @livewire('order-list')
+                @livewire('orders-list')
             </div>
         </div>
     </div>
