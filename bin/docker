@@ -2,6 +2,12 @@
 
 # Reutilizado de https://github.com/mmaximo33/EFDE/
 
+print_url(){
+  echo "Check URL "
+  echo "   - https://localhost"
+  echo "   - https://localhost:8080"
+}
+
 if docker compose version > /dev/null 2>&1; then
   DOCKER_COMPOSE_COMMAND="docker compose"
 else
@@ -13,9 +19,11 @@ case "$1" in
     ${DOCKER_COMPOSE_COMMAND} up -d --build
     #sudo chown -R $USER:www-data app/*
     #sudo chmod -R -x bin/*
+    print_url
     ;;
   "start")
     ${DOCKER_COMPOSE_COMMAND} start
+    print_url
     ;;
   "stop")
     echo "Deteniendo el contenedor Docker..."
@@ -29,12 +37,14 @@ case "$1" in
     ;;
   "restart")
     ${DOCKER_COMPOSE_COMMAND} restart
+    print_url
     ;;
   "logs")
     ${DOCKER_COMPOSE_COMMAND} logs -f
     ;;
   *)
     echo "Uso: $0 {up|start|allstop|stop|restart|logs}"
-    exit 1
+    #exit 1
     ;;
 esac
+
