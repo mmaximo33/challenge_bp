@@ -3,4 +3,7 @@ README.MD
 .idea
 
 .docker/database/data
+./README.md
+
+./app/storage
 
