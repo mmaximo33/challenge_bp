@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\MmDataExample;
+use App\Console\Commands\MmSalesOrdersTotal;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var string[]
      */
     protected $commands = [
-        MmDataExample::class
+        MmDataExample::class,
+        MmSalesOrdersTotal::class
     ];
     /**
      * Define the application's command schedule.
