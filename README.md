@@ -187,6 +187,6 @@ The data generated in the previous tasks is displayed in the **root url** of the
 - Pagination
 - Sorted by fields
 
-<img src="docs/img/show_data_fe.png" height="400" >
+<img src="docs/img/show_data_frontend.png" height="600" >
 
 
