@@ -182,7 +182,10 @@ bin/artisan mm:salesorders:total
 
 The data generated in the previous tasks is displayed in the **root url** of the project
 
-The implicit requirements of this task are in preparation, see issue #4
+- General filter
+- Items per page
+- Pagination
+- Sorted by fields
 
 <img src="docs/img/show_data_fe.png" height="400" >
 
