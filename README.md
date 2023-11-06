@@ -70,7 +70,7 @@ The objective of this project is **Create a project with Laravel 8 and Livewire*
 - Docker 
 - Docker-compose or docker compose 
 
-(*) Validated in Linux-based environments
+(*) Validated in Linux based environments
 
 ### Commands
 
@@ -87,7 +87,7 @@ The objective of this project is **Create a project with Laravel 8 and Livewire*
 
 #### Clone repository
 ```sh
-mkdir -p ~/domains/challenger_bp
+mkdir -p ~/domains/challenge_bp
 cd $_
 
 git clone https://github.com/mmaximo33/challenge_bp ./
